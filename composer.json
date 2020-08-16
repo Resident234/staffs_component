@@ -1,0 +1,54 @@
+{
+  "name": "company.name/vendor",
+  "type": "project",
+  "minimum-stability": "stable",
+  "extra": {
+    "installer-paths": {
+      "public/local/modules/{$name}/": [
+        "type:bitrix-module"
+      ]
+    },
+    "merge-plugin": {
+      "require": [
+        "public/bitrix/composer-bx.json"
+      ]
+    },
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendor\\Utils\\": "public/local/modules/vendor.utils/lib/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@gitl.notamedia.ru:tools/nota.tools.git"
+    }
+  ],
+  "require": {
+    "wikimedia/composer-merge-plugin": "dev-master",
+    "andreyryabin/sprint.migration": "^3.14.4",
+    "guzzlehttp/guzzle": "^6.5",
+    "webarchitect609/bitrix-neverinclude": "^1.1",
+    "rakit/validation": "^1.2",
+    "webarchitect609/bitrix-user-type": "^0.5",
+    "webarchitect609/bitrix-iblock-property-type": "^1.2.1",
+    "doctrine/collections": "^1.6.4",
+    "psr/log": "^1.1.2",
+    "monolog/monolog": "^1.25.1",
+    "vlucas/phpdotenv": "^3.6",
+    "symfony/console": "^4.1.12",
+    "notamedia/nota.tools": "dev-master",
+    "php": ">=7.2 <7.4",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-calendar": "*"
+  },
+  "require-dev": {
+    "dotsunited/php-cs-fixer-config": "^2.0",
+    "friendsofphp/php-cs-fixer": "^2.15.1",
+    "codeception/codeception": "^3.0.2",
+    "phpunit/phpunit": "^7.5"
+  }
+}
